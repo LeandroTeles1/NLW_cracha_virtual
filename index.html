@@ -21,13 +21,10 @@
           <spam>
             <img src="images/build.svg" alt="selo rocketseat" />
           </spam>
-          <img
-            src="images/eu.jpeg"
-            alt="Foto pessoal"
-          />
+          <img src="images/eu.jpeg" alt="Foto pessoal" />
         </div>
 
-        <h1>Leandro Teles</h1>
+        <h1 id="userName">Leandro Teles</h1>
         <a href="https://github.com/LeandroTeles1">
           <img src="images/github.svg" alt="ícone github" />
           @leolloe
@@ -35,48 +32,61 @@
 
         <p>An instructor focused on helping people start programming for web</p>
 
-        <ul>
-          <li>
-            <a href="https://youtube.com/leolloe">
-              <img
-                src="images/youtube.svg"
-                alt="link para o youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/leolloe" target="_blank">
+              <img src="images/youtube.svg" alt="link para o youtube" />
             </a>
           </li>
 
-          <li>
-            <a href="https://www.facebook.com/fleandroteles">
-              <img
-                src="images/facebook.svg"
-                alt="link para o facebook"
-                target="_blank"
-              />
+          <li class="facebook">
+            <a href="https://www.facebook.com/fleandroteles" target="_blank">
+              <img src="images/facebook.svg" alt="link para o facebook" />
             </a>
           </li>
 
-          <li>
-            <a href="https://instagram.com/leolloe">
-              <img
-                src="images/instagram.svg"
-                alt="link para o instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://instagram.com/leolloe" target="_blank">
+              <img src="images/instagram.svg" alt="link para o instagram" />
             </a>
           </li>
 
-          <li>
-            <a href="https://twitter.com/leolloe_">
-              <img
-                src="images/twitter.svg"
-                alt="link para o twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://twitter.com/leolloe_" target="_blank">
+              <img src="images/twitter.svg" alt="link para o twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      const LinksSocialMedia = {
+        github: 'LeandroTeles1',
+        youtube: 'leolloe',
+        facebook: 'fleandroteles',
+        instagram: 'leolloe',
+        twitter: 'leolloe_'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+
+          alert(li.children[0].href)
+        }
+      }
+
+      // i = i + 1
+      // i++
+
+      // ser humano 12345678910
+      //computador 0123456789
+
+      changeSocialMediaLinks()
+    </script>
+
   </body>
 </html>
